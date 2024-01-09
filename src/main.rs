@@ -1,5 +1,13 @@
-mod instance_parser;
+use instance_parser::parse_instance;
+use anyhow::Result;
 
-fn main() {
-    println!("Hello, world!");
+mod instance_parser;
+mod ant_colony;
+
+fn main() -> Result<()> {
+    let instance = parse_instance("instances/inst1.TXT")?;
+
+    println!("{:?}", instance);
+
+    Ok(())
 }
